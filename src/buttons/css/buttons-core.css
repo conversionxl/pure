@@ -1,14 +1,40 @@
+/**
+ * @see https://github.com/vaadin/web-components/blob/23.2/packages/button/theme/lumo/vaadin-button-styles.js
+ */
 .button {
+    --lumo-button-size: var(--lumo-size-m);
+
     /* Structure */
     display: inline-block;
     line-height: normal;
     white-space: nowrap;
     vertical-align: middle;
     text-align: center;
-    cursor: pointer;
+    cursor: var(--lumo-clickable-cursor);
     -webkit-user-drag: none;
     user-select: none;
     box-sizing: border-box;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* For interaction states */
+.button::before,
+.button::after {
+    content: '';
+    /* We rely on the host always being relative */
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    border-radius: inherit;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Firefox: Get rid of the inner focus border */

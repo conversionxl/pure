@@ -22,13 +22,14 @@ form input[type="tel"],
 form input[type="color"],
 form select,
 form textarea {
-    padding: 0.5em 0.6em;
+    padding: var(--lumo-space-s);
     display: inline-block;
-    border: 1px solid #ccc;
-    box-shadow: inset 0 1px 3px #ddd;
-    border-radius: 4px;
+    border: 1px solid var(--lumo-contrast-20pct);
+    box-shadow: var(--lumo-box-shadow-xs);
+    border-radius: var(--lumo-border-radius-s);
     vertical-align: middle;
     box-sizing: border-box;
+    font-size: var(--lumo-font-size-l);
 }
 
 /*
@@ -36,11 +37,11 @@ Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.
 */
 form input:not([type]) {
-    padding: 0.5em 0.6em;
+    padding: var(--lumo-space-wide-m);
     display: inline-block;
-    border: 1px solid #ccc;
-    box-shadow: inset 0 1px 3px #ddd;
-    border-radius: 4px;
+    border: 1px solid var(--lumo-contrast-20pct);
+    box-shadow: var(--lumo-box-shadow-xs);
+    border-radius: var(--lumo-border-radius-s);
     box-sizing: border-box;
 }
 
@@ -69,7 +70,7 @@ form input[type="color"]:focus,
 form select:focus,
 form textarea:focus {
     outline: 0;
-    border-color: #129FEA;
+    border-color: var(--lumo-primary-color-50pct);
 }
 
 /*
@@ -78,19 +79,14 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 */
 form input:not([type]):focus {
     outline: 0;
-    border-color: #129FEA;
+    border-color: var(--lumo-primary-color-50pct);
 }
 
 form input[type="file"]:focus,
 form input[type="radio"]:focus,
 form input[type="checkbox"]:focus {
-    outline: thin solid #129FEA;
-    outline: 1px auto #129FEA;
-}
-form label.checkbox,
-form label.radio {
-    margin: 0.5em 0;
-    display: block;
+    outline: thin solid var(--lumo-primary-color-50pct);
+    outline: 1px auto var(--lumo-primary-color-50pct);
 }
 
 form input[type="text"][disabled],
@@ -128,42 +124,39 @@ form select[readonly],
 form textarea[readonly] {
     background-color: #eee; /* menu hover bg color */
     color: #777; /* menu text color */
-    border-color: #ccc;
+    border-color: var(--lumo-contrast-20pct);
 }
 
 form input:focus:invalid,
 form textarea:focus:invalid,
 form select:focus:invalid {
-    color: #b94a48;
-    border-color: #e9322d;
+    color: var(--lumo-error-text-color);
+    border-color: var(--lumo-error-color);
 }
 form input[type="file"]:focus:invalid:focus,
 form input[type="radio"]:focus:invalid:focus,
 form input[type="checkbox"]:focus:invalid:focus {
-    outline-color: #e9322d;
+    outline-color: var(--lumo-error-color);
 }
 form select {
     /* Normalizes the height; padding is not sufficient. */
     height: 2.25em;
-    border: 1px solid #ccc;
+    border: 1px solid var(--lumo-contrast-20pct);
     background-color: white;
 }
 form select[multiple] {
     height: auto;
 }
-form label {
-    margin: 0.5em 0 0.2em;
-}
 form fieldset {
     margin: 0;
-    padding: 0.35em 0 0.75em;
+    padding: var(--lumo-space-xs) 0 var(--lumo-space-s);
     border: 0;
 }
 form legend {
     display: block;
     width: 100%;
-    padding: 0.3em 0;
-    margin-bottom: 0.3em;
+    padding: var(--lumo-space-s) 0;
+    margin-bottom: var(--lumo-space-s);
     color: #333;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -187,7 +180,7 @@ form.stacked select,
 form.stacked label,
 form.stacked textarea {
     display: block;
-    margin: 0.25em 0;
+    margin: var(--lumo-space-xs) 0;
 }
 
 /*
@@ -196,7 +189,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 */
 form.stacked input:not([type]) {
     display: block;
-    margin: 0.25em 0;
+    margin: var(--lumo-space-xs) 0;
 }
 form.aligned input,
 form.aligned textarea,
@@ -211,14 +204,14 @@ form.aligned textarea {
 
 /* Aligned Forms */
 form.aligned .control-group {
-    margin-bottom: 0.5em;
+    margin-bottom: var(--lumo-space-s);
 }
 form.aligned .control-group label {
     text-align: right;
     display: inline-block;
     vertical-align: middle;
     width: 10em;
-    margin: 0 1em 0 0;
+    margin: 0 var(--lumo-space-m) 0 0;
 }
 form.aligned .controls {
     margin: 1.5em 0 0 11em;
@@ -228,17 +221,17 @@ form.aligned .controls {
 form input.input-rounded,
 form .input-rounded {
     border-radius: 2em;
-    padding: 0.5em 1em;
+    padding: var(--lumo-space-s) var(--lumo-space-m);
 }
 
 /* Grouped Inputs */
 form .group fieldset {
-    margin-bottom: 10px;
+    margin-bottom: var(--lumo-space-s);
 }
 form .group input,
 form .group textarea {
     display: block;
-    padding: 10px;
+    padding: var(--lumo-space-s);
     margin: 0 0 -1px;
     border-radius: 0;
     position: relative;
@@ -251,23 +244,23 @@ form .group textarea:focus {
 form .group input:first-child,
 form .group textarea:first-child {
     top: 1px;
-    border-radius: 4px 4px 0 0;
+    border-radius: var(--lumo-border-radius-s) var(--lumo-border-radius-s) 0 0;
     margin: 0;
 }
 form .group input:first-child:last-child,
 form .group textarea:first-child:last-child {
     top: 1px;
-    border-radius: 4px;
+    border-radius: var(--lumo-border-radius-s);
     margin: 0;
 }
 form .group input:last-child,
 form .group textarea:last-child {
     top: -2px;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 var(--lumo-border-radius-s) var(--lumo-border-radius-s);
     margin: 0;
 }
 form .group button {
-    margin: 0.35em 0;
+    margin: var(--lumo-space-s) 0;
 }
 
 form .input-1 {
@@ -292,15 +285,15 @@ form .input-1-4 {
 /* Inline help for forms */
 form.message-inline {
     display: inline-block;
-    padding-left: 0.3em;
-    color: #666;
+    padding-left: var(--lumo-space-s);
+    color: var(--lumo-secondary-text-color);
     vertical-align: middle;
-    font-size: 0.875em;
+    font-size: var(--lumo-font-size-s);
 }
 
 /* Block help for forms */
 form.message {
     display: block;
-    color: #666;
-    font-size: 0.875em;
+    color: var(--lumo-secondary-text-color);
+    font-size: var(--lumo-font-size-s);
 }

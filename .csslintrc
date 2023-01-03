@@ -3,6 +3,7 @@
     "box-sizing"               : false,
     "display-property-grouping": false,
     "fallback-colors"          : false,
+    "known-properties"         : false,
     "order-alphabetical"       : false,
     "overqualified-elements"   : false,
     "star-property-hack"       : false,

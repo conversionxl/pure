@@ -7,8 +7,3 @@
     /* Prevents distributing space between rows */
     align-content: flex-start;
 }
-
-.pure-u {
-    display: inline-block;
-    vertical-align: top;
-}

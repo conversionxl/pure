@@ -3,24 +3,30 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
-    border: 1px solid #cbcbcb;
+    border: 1px solid var(--lumo-contrast-10pct);
 }
 
 table caption {
     color: #000;
     font: italic 85%/1 arial, sans-serif;
-    padding: 1em 0;
+    padding: var(--lumo-space-m) 0;
     text-align: center;
 }
 
 table td,
 table th {
-    border-left: 1px solid #cbcbcb;/*  inner column border */
+    border-left: 1px solid var(--lumo-contrast-10pct);/*  inner column border */
     border-width: 0 0 0 1px;
     font-size: inherit;
-    margin: 0;
     overflow: visible; /*to make ths where the title is really long work*/
-    padding: 0.5em 1em; /* cell padding */
+    padding: var(--lumo-space-wide-m); /* cell padding */
+}
+
+@media screen and (min-width: 35.5em) {
+    table td,
+    table th {
+        padding: var(--lumo-space-wide-l); /* cell padding */
+    }
 }
 
 table tfoot,
@@ -40,17 +46,17 @@ table td {
     background-color: transparent;
 }
 .odd td {
-    background-color: #f2f2f2;
+    background-color: var(--lumo-contrast-5pct);
 }
 
 /* nth-child selector for modern browsers */
 table.striped tr:nth-child(2n-1) td {
-    background-color: #f2f2f2;
+    background-color: var(--lumo-contrast-5pct);
 }
 
 /* BORDERED TABLES */
 table.bordered td {
-    border-bottom: 1px solid #cbcbcb;
+    border-bottom: 1px solid var(--lumo-contrast-10pct);
 }
 table.bordered tbody > tr:last-child > td {
     border-bottom-width: 0;
@@ -62,7 +68,7 @@ table.bordered tbody > tr:last-child > td {
 table.horizontal td,
 table.horizontal th {
     border-width: 0 0 1px 0;
-    border-bottom: 1px solid #cbcbcb;
+    border-bottom: 1px solid var(--lumo-contrast-10pct);
 }
 table.horizontal tbody > tr:last-child > td {
     border-bottom-width: 0;
